@@ -1,0 +1,544 @@
+/* FONTS */
+
+/* DM Sans  */
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/static/DMSans-Regular.ttf") format("truetype");
+  font-family: "DM Sans";
+  font-display: swap;
+}
+
+/* DM Sans  */
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  src: url("./assets/fonts/static/DMSans-Medium.ttf") format("truetype");
+  font-family: "DM Sans";
+  font-display: swap;
+}
+
+/* DM Sans  */
+@font-face {
+  font-style: italic;
+  font-weight: 500;
+  src: url("./assets/fonts/static/DMSans-MediumItalic.ttf") format("truetype");
+  font-family: "DM Sans";
+  font-display: swap;
+}
+
+/* VARIABLES */
+
+:root {
+  --clr-purple-100: 254, 88%, 90%;
+  --clr-purple-500: 256, 67%, 59%;
+
+  --clr-yellow-100: 31, 66%, 93%;
+  --clr-yellow-500: 39, 100%, 71%;
+
+  --clr-white: 0, 0%, 100%;
+  --clr-black: 0, 0%, 7%;
+
+  --text-preset-1-size: 3.875rem;
+  --text-preset-1-height: 0.935;
+  --text-preset-1-ls: -0.1875rem;
+
+  --text-preset-2-size: 2.5rem; /* 40px */
+  --text-preset-2-height: 0.9;
+  --text-preset-2-ls: -0.125rem; /* -2px */
+
+  --text-preset-3-size: 2rem;
+  --text-preset-3-height: 0.875;
+  --text-preset-3-ls: -0.125rem; /* -2px */
+
+  --text-preset-4-size: 1.125rem; /* 18px */
+  --text-preset-4-height: 1.11;
+
+  --spacing-0: 0;
+  --spacing-50: 0.25rem;
+  --spacing-100: 0.5rem;
+  --spacing-150: 0.75rem;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-500: 2.5rem;
+  --spacing-600: 3rem;
+  --spacing-700: 3.5rem;
+  --spacing-800: 4rem;
+  --spacing-900: 4.5rem;
+  --spacing-1000: 5rem;
+  --spacing-1100: 5.5rem;
+  --spacing-1200: 6rem;
+  --spacing-1300: 6.5rem;
+  --spacing-1400: 7rem;
+  --spacing-1500: 7.5rem;
+  --spacing-1600: 8rem;
+  --spacing-1700: 8.5rem;
+}
+
+/* GENERAL */
+
+html {
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f6f5f6;
+  padding: var(--spacing-600) var(--spacing-500);
+  min-height: 100vh;
+  color: hsl(var(--clr-neutral-700));
+  font-family: "DM Sans", sans-serif;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1120px;
+}
+
+p {
+  font-size: var(--text-preset-4-size);
+  line-height: var(--text-preset-4-height);
+}
+
+input,
+button {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* UTILITY */
+
+.sr-only {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap; /* prevents line breaks */
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1170px;
+}
+
+/* GRID */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "left middle middle schedule"
+    "left middle middle schedule"
+    "left audience followers followers";
+  gap: var(--spacing-400);
+  padding: var(--spacing-1000) 0;
+}
+
+.card {
+  border-radius: 0.625rem;
+}
+
+.card__title {
+  font-weight: 500;
+  font-size: var(--text-preset-2-size);
+  line-height: var(--text-preset-2-height);
+  letter-spacing: var(--text-preset-2-ls);
+}
+
+.left {
+  display: flex;
+  grid-area: left;
+  flex-direction: column;
+  gap: var(--spacing-400);
+}
+
+.card--create {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-300);
+  background-color: hsl(var(--clr-yellow-100));
+  padding: var(--spacing-400);
+  height: 415px;
+}
+
+.card--create .card__title span {
+  color: hsl(var(--clr-purple-500));
+  font-style: italic;
+}
+
+.card--content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: hsl(var(--clr-yellow-500));
+  padding: var(--spacing-300);
+}
+
+.middle {
+  display: flex;
+  grid-area: middle;
+  flex-direction: column;
+  gap: var(--spacing-400);
+}
+
+.card--faster {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-300);
+  background-color: hsl(var(--clr-purple-500));
+  height: 324px;
+  color: hsl(var(--clr-white));
+  text-align: center;
+}
+
+.card--faster .card__title {
+  font-size: var(--text-preset-1-size);
+  line-height: var(--text-preset-1-height);
+  letter-spacing: var(--text-preset-1-ls);
+}
+
+.card--faster .card__title span:first-child {
+  color: hsl(var(--clr-yellow-500));
+}
+
+.card--faster .card__title span:last-child {
+  font-style: italic;
+}
+
+.card--faster div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-100);
+}
+
+.card--faster div img {
+  max-width: 192px;
+}
+
+.middle__bottom {
+  display: flex;
+  flex: 1;
+  gap: var(--spacing-400);
+}
+
+.middle__bottom > .card {
+  min-height: 247px;
+}
+
+.middle__bottom .card__title {
+  font-size: var(--text-preset-3-size);
+  line-height: var(--text-preset-3-height);
+  letter-spacing: var(--text-preset-3-ls);
+}
+
+.card--multiple {
+  display: flex;
+  position: relative;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: hsl(var(--clr-white));
+  padding: var(--spacing-300);
+  overflow: hidden;
+}
+
+.card--multiple img {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.card--maintain {
+  position: relative;
+  flex: 1;
+  background-color: hsl(var(--clr-yellow-500));
+  padding: var(--spacing-300);
+  overflow: hidden;
+}
+
+.card--maintain img {
+  position: absolute;
+  bottom: -62px;
+  left: 24px;
+  max-width: calc(100% - 48px);
+}
+
+.card--schedule {
+  display: flex;
+  grid-area: schedule;
+  flex-direction: column;
+  gap: var(--spacing-300);
+  background-color: hsl(var(--clr-purple-100));
+  padding: var(--spacing-400);
+  overflow: hidden;
+}
+
+.card--schedule > img {
+  width: 357px;
+  max-width: 357px;
+}
+
+.card--audience {
+  display: flex;
+  grid-area: audience;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: hsl(var(--clr-white));
+  padding: var(--spacing-300);
+}
+
+.card--audience .card__title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+}
+
+.card--audience .card__title span {
+  font-size: var(--text-preset-4-size);
+  line-height: var(--text-preset-4-height);
+  letter-spacing: normal;
+}
+
+.card--followers {
+  display: flex;
+  grid-area: followers;
+  align-items: center;
+  gap: var(--spacing-100);
+  background-color: hsl(var(--clr-purple-500));
+  padding: var(--spacing-300);
+  color: hsl(var(--clr-white));
+}
+
+.card--followers img {
+  max-width: 227px;
+}
+
+/* ATTRIBUTION */
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  border-top-right-radius: var(--spacing-200);
+  background: hsl(var(--clr-purple-500));
+  padding: var(--spacing-200);
+  color: hsl(var(--clr-white));
+}
+
+.attribution__link {
+  transition: color 0.3s ease-in-out;
+  color: hsl(var(--clr-yellow-500));
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.attribution__link:hover {
+  color: hsl(var(--clr-yellow-100));
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 65.625rem) {
+  :root {
+    --text-preset-1-size: 3.375rem;
+    --text-preset-1-height: 3rem;
+    --text-preset-1-ls: -0.04em;
+
+    --text-preset-2-size: 2.25rem;
+    --text-preset-2-height: 1.875rem;
+    --text-preset-2-ls: -0.06em;
+
+    --text-preset-3-size: 1.75rem;
+    --text-preset-3-height: 1.625rem;
+    --text-preset-3-ls: -0.06em;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "middle middle"
+      "schedule schedule"
+      "followers followers"
+      "audience audience"
+      "left left";
+    padding: 0;
+  }
+
+  .card--faster .card__title {
+    margin: 0 auto;
+    max-width: 536px;
+  }
+
+  .card--maintain img {
+    max-width: 208px;
+  }
+
+  .card--schedule {
+    align-items: center;
+    text-align: center;
+  }
+
+  .card--schedule p,
+  .card--schedule .card__title {
+    max-width: 360px;
+  }
+
+  .card--audience {
+    flex-direction: row;
+  }
+
+  .card--audience .card__title {
+    font-size: var(--text-preset-1-size);
+    line-height: var(--text-preset-1-height);
+    letter-spacing: var(--text-preset-1-ls);
+  }
+
+  .card--audience img {
+    max-width: 178px;
+  }
+
+  .card--followers {
+    justify-content: center;
+  }
+
+  .card--followers .card__title {
+    font-size: var(--text-preset-2-size);
+    line-height: var(--text-preset-2-height);
+    letter-spacing: var(--text-preset-2-ls);
+  }
+
+  .card--followers .card__title {
+    max-width: 257px;
+  }
+
+  .left {
+    flex-direction: row;
+  }
+
+  .card--create {
+    flex: 1;
+    height: unset;
+  }
+
+  .card--create img {
+    max-width: 190px;
+  }
+
+  .card--content {
+    gap: var(--spacing-300);
+  }
+
+  .card--content img {
+    height: 222px;
+  }
+
+  .attribution {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 37.5rem) {
+  :root {
+    --text-preset-1-size: 2.875rem;
+    --text-preset-1-height: 2.625rem;
+
+    --text-preset-2-size: 2rem;
+    --text-preset-2-height: 1.75rem;
+
+    --text-preset-3-size: 1.625rem;
+    --text-preset-3-height: 1.5rem;
+  }
+
+  body {
+    padding: var(--spacing-400) var(--spacing-200);
+  }
+
+  .card--faster {
+    padding: var(--spacing-500) var(--spacing-400);
+  }
+
+  .middle__bottom {
+    flex-direction: column;
+  }
+
+  .middle__bottom > .card--multiple {
+    min-height: 162px;
+    gap: var(--spacing-200);
+  }
+
+  .middle__bottom > .card--multiple img {
+    position: static;
+  }
+
+  .card--maintain {
+    min-height: 216px;
+  }
+
+  .card--maintain img {
+    bottom: -20px;
+  }
+
+  .left {
+    flex-direction: column;
+  }
+
+  .card--content img {
+    height: auto;
+    max-width: 220px;
+  }
+
+  .card--audience {
+    flex-direction: column;
+    gap: var(--spacing-300);
+  }
+
+  .card--followers {
+    flex-direction: column;
+    gap: var(--spacing-500);
+    text-align: center;
+  }
+
+  .card--followers img {
+    max-width: 100%;
+  }
+
+  .card--schedule .card__title {
+    font-size: var(--text-preset-3-size);
+    line-height: var(--text-preset-3-height);
+    letter-spacing: var(--text-preset-3-ls);
+  }
+
+  .card--schedule > img {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* stop most animations/transitions for users who asked for reduced motion */
+  * {
+    animation: none !important; /* remove animations */
+    transition: none !important; /* remove transitions */
+  }
+}
