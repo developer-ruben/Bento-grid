@@ -94,7 +94,7 @@ body {
   background-color: #f6f5f6;
   padding: var(--spacing-600) var(--spacing-500);
   min-height: 100vh;
-  color: hsl(var(--clr-neutral-700));
+  color: #f6f5f6;
   font-family: "DM Sans", sans-serif;
 }
 
